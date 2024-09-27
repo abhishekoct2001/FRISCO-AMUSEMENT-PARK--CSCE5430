@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Frisco Amusement Park</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tickets">Book Tickets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#visit">Visit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="container-fluid bg-dark text-white text-center py-5">
+            <h2>Welcome to Frisco Amusement Park</h2>
+            <p>Explore our park amenities and services for an inclusive experience.</p>
+        </section>
+
+        <section id="events" class="container-fluid bg-light text-dark text-center py-5">
+            <h2>Events</h2>
+            <p>Check out the latest events happening at our park!</p>
+            <button class="btn btn-primary" onclick="window.location.href='{{ url_for('register_for_events') }}'">Register for Events</button>
+        </section>
+
+        <section id="tickets" class="container-fluid bg-secondary text-white text-center py-5">
+            <h2>Book Tickets</h2>
+            <p>Book your tickets online and skip the lines!</p>
+            <form method="post" action="{{ url_for('book_tickets') }}">
+                <input type="text" name="details" placeholder="Enter Details" required>
+                <button type="submit" class="btn btn-success">Book Now</button>
+            </form>
+        </section>
+
+        <section id="visit" class="container-fluid bg-info text-white text-center py-5">
+            <h2>Plan Your Visit</h2>
+            <p>Everything you need to know to plan your perfect day at Frisco Amusement Park.</p>
+        </section>
+
+        <section id="contact" class="container-fluid bg-warning text-dark text-center py-5">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, please <a href="mailto:contact@amusementpark.com">email us</a>.</p>
+        </section>
+    </main>
+
+    <footer class="container-fluid bg-primary text-white text-center py-3">
+        <p>© 2024 Frisco Amusement Park. All rights reserved.</p>
+    </footer>
+</body>
+</html>
