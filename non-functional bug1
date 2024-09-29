@@ -1,0 +1,18 @@
+Non-Functional Bug 1: Performance – High Page Load Times Due to Uncompressed Images
+
+Fix: Implement image compression and lazy loading to reduce load times.
+html
+
+<!-- Optimized Image with Lazy Loading -->
+<img src="images/attraction-banner.jpg" alt="Attraction Banner" loading="lazy" width="800" height="600">
+
+<!-- Add CSS for further optimization -->
+<style>
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+Explanation:
+
