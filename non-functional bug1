@@ -14,5 +14,7 @@ html
     display: block;
   }
 </style>
-Explanation:
+
+
+Explanation:By setting loading="lazy", images will only load when they appear in the viewport, reducing the initial load time.
 
