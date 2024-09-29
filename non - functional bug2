@@ -1,0 +1,18 @@
+Non-Functional Bug 2: Security – Missing HTTPS/SSL Configuration
+Bug Description: The website is not using HTTPS, making user data vulnerable to interception during transmission, especially during login and transactions.
+
+Fix: Enforce HTTPS by configuring the web server to redirect HTTP to HTTPS and enabling SSL certificates.
+
+<!-- Force HTTPS Redirection (Apache .htaccess example) -->
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<!-- Security Headers -->
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://trusted.cdn.com"
+</IfModule>
+
