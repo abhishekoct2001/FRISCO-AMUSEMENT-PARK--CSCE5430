@@ -1,0 +1,11 @@
+Non-Functional Bug 3: Usability – Missing Alt Text for Accessibility
+Bug Description: Some images on the website lack alt attributes, which negatively impacts accessibility for users relying on screen readers and reduces the overall usability of the system.
+
+Fix: Add descriptive alt text to all images for improved accessibility.
+
+<!-- Image with Alt Text for Accessibility -->
+<img src="images/park-attraction.jpg" alt="Aerial view of the main attraction at Frisco Amusement Park">
+
+<!-- Decorative images should have empty alt attributes -->
+<img src="images/decorative-element.png" alt="">
+
