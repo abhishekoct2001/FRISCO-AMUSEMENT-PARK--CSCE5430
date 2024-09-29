@@ -1,0 +1,23 @@
+Bug 3: Event Registration Date Validation (Functional)
+
+
+<!-- Event Registration Form (HTML) -->
+<form id="eventRegistrationForm">
+  <label for="eventDate">Event Date:</label>
+  <input type="date" id="eventDate" name="eventDate" required><br>
+
+  <button type="submit">Register for Event</button>
+</form>
+
+<!-- Validation Script (JavaScript) -->
+<script>
+  document.getElementById('eventRegistrationForm').addEventListener('submit', function(event) {
+    let eventDate = new Date(document.getElementById('eventDate').value);
+    let currentDate = new Date();
+
+    if (eventDate <= currentDate) {
+      alert('Please select a future date for the event.');
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
