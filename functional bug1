@@ -1,0 +1,36 @@
+1. Bug 1: Ticket Booking Form Validation (Functional)
+Bug Description: The ticket booking form allows users to submit incomplete forms, such as missing required fields like name, email, or ticket type. This can lead to errors in processing.
+
+
+
+<!-- Booking Form (HTML) -->
+<form id="ticketBookingForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br>
+
+  <label for="ticketType">Ticket Type:</label>
+  <select id="ticketType" name="ticketType" required>
+    <option value="">Select Ticket Type</option>
+    <option value="adult">Adult</option>
+    <option value="child">Child</option>
+  </select><br>
+
+  <button type="submit">Book Ticket</button>
+</form>
+
+<!-- Validation Script (JavaScript) -->
+<script>
+  document.getElementById('ticketBookingForm').addEventListener('submit', function(event) {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let ticketType = document.getElementById('ticketType').value;
+
+    if (name === '' || email === '' || ticketType === '') {
+      alert('All fields are required!');
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
